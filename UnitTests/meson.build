@@ -40,7 +40,6 @@ if get_option('enable-tests')
     test_driver = executable(
         'test_driver',
         unit_test_files,
-        install : true,
         dependencies : [su2_cfd_dep, common_dep, su2_deps, catch2_dep],
         cpp_args: ['-fPIC', default_warning_flags, su2_cpp_args]
     )
@@ -57,7 +56,6 @@ if get_option('enable-tests')
     test_driver_AD = executable(
         'test_driver_AD',
         unit_test_files_ad,
-        install : true,
         dependencies : [su2_cfd_dep_ad, commonAD_dep, su2_deps, codi_dep, catch2_dep],
         cpp_args: ['-fPIC', default_warning_flags, su2_cpp_args, codi_rev_args]
     )
@@ -69,7 +67,6 @@ if get_option('enable-tests')
     test_driver_DD = executable(
         'test_driver_DD',
         unit_test_files_dd,
-        install : true,
         dependencies : [su2_cfd_dep_dd, commonDD_dep, su2_deps, codi_dep, catch2_dep],
         cpp_args: ['-fPIC', default_warning_flags, su2_cpp_args, codi_for_args]
     )
